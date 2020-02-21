@@ -1,14 +1,15 @@
-# Maintainer: Leonardo Arena <rnalrd@alpinelinux.org>
-pkgname=py3-ipaddr
+# Contributor: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
+# Maintainer: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
+pkgname=py2-ipaddr
 _pkgname=ipaddr
 pkgver=2.2.0
-pkgrel=5
-pkgdesc="Python3 IP address manipulation library"
+pkgrel=0
+pkgdesc="Python2 IP address manipulation library"
 url="https://github.com/google/ipaddr-py"
 arch="noarch"
 license="Apache-2.0 PSF"
-depends="python3"
-makedepends="py3-setuptools"
+depends="python2"
+makedepends="py-setuptools"
 source="https://files.pythonhosted.org/packages/source/${_pkgname:0:1}/$_pkgname/$_pkgname-$pkgver.tar.gz"
 builddir="$srcdir"/$_pkgname-$pkgver
 
@@ -16,15 +17,15 @@ replaces="py-ipaddr" # Backwards compatibility
 provides="py-ipaddr=$pkgver-r$pkgrel" # Backwards compatibility
 
 build() {
-	python3 setup.py build
+	python2 setup.py build
 }
 
 check() {
-	python3 ipaddr_test.py
+	python2 ipaddr_test.py
 }
 
 package() {
-	python3 setup.py install --root="$pkgdir"
+	python2 setup.py install --root="$pkgdir"
 }
 
 sha512sums="5adb117c44e6e5dbdb9e96543aa7a34f35b4a4ec9baa163a25448058c34091bf4019d24f0250928291e4d4bc97dcdf75865daef739e2d94f98cc584e6e6c50dd  ipaddr-2.2.0.tar.gz"

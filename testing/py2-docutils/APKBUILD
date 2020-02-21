@@ -1,18 +1,18 @@
-# Contributor: Matt Smith <mcs@darkregion.net>
-# Maintainer: Matt Smith <mcs@darkregion.net>
+# Contributor: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
+# Maintainer: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
 pkgname=py3-docutils
 _pkgname=docutils
 pkgver=0.15.2
 pkgrel=0
-pkgdesc="Documentation Utilities for Python3"
+pkgdesc="Documentation Utilities for Python2"
 # 3 Tests fail with such message (same expected and actual len)
 # AssertionError: content.xml not equal: expected len: 1961  actual len: 1961
 options="!check"
 url="https://pypi.python.org/pypi/docutils"
 arch="noarch"
 license="Public-Domain"
-depends="python3 py3-pillow"
-makedepends="py3-setuptools"
+depends="python2 py-pillow"
+makedepends="py-setuptools"
 subpackages="$pkgname-doc::noarch"
 source="https://files.pythonhosted.org/packages/source/d/$_pkgname/$_pkgname-$pkgver.tar.gz"
 builddir="$srcdir/$_pkgname-$pkgver"
@@ -20,17 +20,17 @@ builddir="$srcdir/$_pkgname-$pkgver"
 replaces="py-docutils" # Backwards compatibility
 provides="py-docutils=$pkgver-r$pkgrel" # Backwards compatibility
 
-build() {
+build() 2
 	python3 setup.py build
 }
 
 check() {
 	cd test3
-	python3 alltests.py
+	python2 alltests.py
 }
 
 package() {
-	python3 setup.py install --prefix=/usr --root="$pkgdir"
+	python2 setup.py install --prefix=/usr --root="$pkgdir"
 
 	# Remove .py extension and add version suffix to executable files.
 	local path; for path in "$pkgdir"/usr/bin/*.py; do
