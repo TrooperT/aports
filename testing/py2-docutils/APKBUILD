@@ -1,6 +1,6 @@
 # Contributor: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
 # Maintainer: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
-pkgname=py3-docutils
+pkgname=py2-docutils
 _pkgname=docutils
 pkgver=0.15.2
 pkgrel=0

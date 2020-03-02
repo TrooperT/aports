@@ -1,0 +1,31 @@
+# Contributor: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
+# Maintainer: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
+pkgname="ifupdown2"
+#_pkgname=GvGen
+pkgver="2.0.1-1"
+pkgrel=0
+pkgdesc="ifupdown2 is ifupdown re-written in Python."
+
+url="https://github.com/CumulusNetworks/$pkgname"
+options="!check"
+arch="noarch"
+license="GPLv2"
+depends="iproute2 ethtool bridge-utils python2 py2-ipaddr py2-argcomplete py2-mako py2-gvgen"
+makedepends="python2-dev py-setuptools"
+install=""
+subpackages=""
+#subpackages="$pkgname-dev $pkgname-doc"
+source="https://github.com/CumulusNetworks/$pkgname/archive/$pkgver.tar.gz"
+builddir="$srcdir/$pkgname-$pkgver"
+
+build() {
+	python setup.py build
+}
+
+check() {
+	python setup.py test
+}
+
+package() {
+	python setup.py install --prefix=/usr --root="$pkgdir"
+}
