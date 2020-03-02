@@ -1,7 +1,7 @@
 # Contributor: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
 # Maintainer: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
 pkgname=py2-argcomplete
-_pkgname=${pkgname#py3-}
+_pkgname=${pkgname#py2-}
 pkgver=1.11.1
 pkgrel=0
 pkgdesc="Easy, extensible command line tab completion of arguments for your Python script"
@@ -10,7 +10,7 @@ url="https://github.com/kislyuk/argcomplete"
 arch="noarch"
 license="Apache-2.0"
 depends="python2"
-makedepends="py3-setuptools"
+makedepends="py-setuptools"
 checkdepends="py3-coverage py3-flake8 py3-pexpect bash"
 source="$pkgname-$pkgver.tar.gz::https://github.com/kislyuk/$_pkgname/archive/v$pkgver.tar.gz
 	"
