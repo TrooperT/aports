@@ -16,7 +16,7 @@ install=""
 subpackages=""
 #subpackages="$pkgname-dev $pkgname-doc"
 source="https://github.com/CumulusNetworks/$pkgname/archive/$_branch.zip"
-builddir="$srcdir/$pkgname-$pkgver"
+builddir="$srcdir/$pkgname-$_branch"
 
 build() {
 	python3 setup.py build
