@@ -2,31 +2,30 @@
 # Maintainer: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
 pkgname="ifupdown2"
 #_pkgname=GvGen
-pkgver="2.0.1_git1"
-_pkgver="2.0.1-1"
+pkgver="3.0.0_rc1"
+_branch="python3"
 pkgrel=0
 pkgdesc="ifupdown2 is ifupdown re-written in Python."
-
 url="https://github.com/CumulusNetworks/$pkgname"
 options="!check"
 arch="noarch"
 license="GPLv2"
-depends="iproute2 ethtool bridge-utils python2 py2-ipaddr py2-argcomplete py2-mako py2-gvgen"
-makedepends="python2-dev py-setuptools"
+depends="iproute2 ethtool bridge-utils python3 py3-ipaddr py3-argcomplete py3-mako py3-gvgen"
+makedepends="python3-dev py-setuptools"
 install=""
 subpackages=""
 #subpackages="$pkgname-dev $pkgname-doc"
-source="https://github.com/CumulusNetworks/$pkgname/archive/$_pkgver.tar.gz"
-builddir="$srcdir/$pkgname-$_pkgver"
+source="https://github.com/CumulusNetworks/$pkgname/archive/$_branch.zip"
+builddir="$srcdir/$pkgname-$pkgver"
 
 build() {
-	python setup.py build
+	python3 setup.py build
 }
 
 check() {
-	python setup.py test
+	python3 setup.py test
 }
 
 package() {
-	python setup.py install --prefix=/usr --root="$pkgdir"
+	python3 setup.py install --prefix=/usr --root="$pkgdir"
 }
