@@ -2,7 +2,8 @@
 # Maintainer: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
 pkgname="ifupdown2"
 #_pkgname=GvGen
-pkgver="2.0.1-1"
+pkgver="2.0.1_1"
+_pkgver="2.0.1-1"
 pkgrel=0
 pkgdesc="ifupdown2 is ifupdown re-written in Python."
 
@@ -15,8 +16,8 @@ makedepends="python2-dev py-setuptools"
 install=""
 subpackages=""
 #subpackages="$pkgname-dev $pkgname-doc"
-source="https://github.com/CumulusNetworks/$pkgname/archive/$pkgver.tar.gz"
-builddir="$srcdir/$pkgname-$pkgver"
+source="https://github.com/CumulusNetworks/$pkgname/archive/$_pkgver.tar.gz"
+builddir="$srcdir/$pkgname-$_pkgver"
 
 build() {
 	python setup.py build
