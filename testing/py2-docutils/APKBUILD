@@ -20,8 +20,8 @@ builddir="$srcdir/$_pkgname-$pkgver"
 replaces="py-docutils" # Backwards compatibility
 provides="py-docutils=$pkgver-r$pkgrel" # Backwards compatibility
 
-build() 2
-	python3 setup.py build
+build() {
+	python2 setup.py build
 }
 
 check() {
@@ -33,14 +33,14 @@ package() {
 	python2 setup.py install --prefix=/usr --root="$pkgdir"
 
 	# Remove .py extension and add version suffix to executable files.
-	local path; for path in "$pkgdir"/usr/bin/*.py; do
-		mv "$path" "${path/.py/-3}"
-	done
-
-	cd "$pkgdir"/usr/bin
-	local name; for name in *-3; do
-		ln -s -- ${name} "$pkgdir"/usr/bin/${name%-3}
-	done
+#	local path; for path in "$pkgdir"/usr/bin/*.py; do
+#		mv "$path" "${path/.py/-3}"
+#	done
+#
+#	cd "$pkgdir"/usr/bin
+#	local name; for name in *-3; do
+#		ln -s -- ${name} "$pkgdir"/usr/bin/${name%-3}
+#	done
 }
 
 doc() {
