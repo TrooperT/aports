@@ -6,12 +6,13 @@ pkgver="1.0"
 pkgrel=0
 pkgdesc="Graphviz Python dot generator"
 url="https://github.com/stricaud/gvgen"
-arch="all"
+arch="noarch"
 license="MIT"
 depends="python2"
 makedepends="python2-dev py-setuptools"
 install=""
-subpackages="$pkgname-dev $pkgname-doc"
+subpackages=""
+#subpackages="$pkgname-dev $pkgname-doc"
 source="https://files.pythonhosted.org/packages/source/${_pkgname:0:1}/$_pkgname/$_pkgname-$pkgver.tar.gz"
 builddir="$srcdir"/$_pkgname-$pkgver
 
