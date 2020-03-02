@@ -2,7 +2,7 @@
 # Maintainer: Sam Johnson <samuel.johnson.bungie+github@gmail.com>
 pkgname="ifupdown2"
 #_pkgname=GvGen
-pkgver="2.0.1_1"
+pkgver="2.0.1_git1"
 _pkgver="2.0.1-1"
 pkgrel=0
 pkgdesc="ifupdown2 is ifupdown re-written in Python."
